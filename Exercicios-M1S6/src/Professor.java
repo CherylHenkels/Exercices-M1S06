@@ -1,4 +1,4 @@
-public class Professor {
+public class Professor extends Funcionario{
 
     private String nome;
     private int idade;
@@ -35,4 +35,6 @@ public class Professor {
     public void setTempoTrabalho(int tempoTrabalho) {
         this.tempoTrabalho = tempoTrabalho;
     }
+
+
 }
