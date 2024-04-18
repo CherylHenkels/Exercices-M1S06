@@ -41,4 +41,11 @@ public class Aluno {
     public void setStatusMatricula(StatusMatricula statusMatricula) {
         this.statusMatricula = statusMatricula;
     }
+
+    //Métodos
+
+    @Override
+    public String toString() {
+        return "Aluno{" + "nome=" + nome + ", idade=" + idade + '}';
+    }
 }

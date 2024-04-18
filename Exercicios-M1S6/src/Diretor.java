@@ -13,4 +13,10 @@ public class Diretor extends Funcionario{
     public void setTempoCargo(int tempoCargo) {
         this.tempoCargo = tempoCargo;
     }
+
+    //Metodos
+    @Override
+    public String toString() {
+        return  "Diretor{" + "tempoCargo=" + tempoCargo + '}';
+    }
 }
