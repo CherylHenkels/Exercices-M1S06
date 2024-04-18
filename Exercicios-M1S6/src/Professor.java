@@ -36,5 +36,11 @@ public class Professor extends Funcionario{
         this.tempoTrabalho = tempoTrabalho;
     }
 
+    //Metodos
+    @Override
+    public String toString() {
+        return "Professor{" + "nome=" + nome + ", idade=" + idade + ", tempo=" + tempoTrabalho + '}';
+    }
+
 
 }

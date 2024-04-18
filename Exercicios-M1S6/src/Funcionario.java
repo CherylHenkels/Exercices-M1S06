@@ -41,4 +41,9 @@ public class Funcionario implements IFuncionario{
         this.salario *= 1.10; // 10% de aumento
         System.out.println(nome + " foi promovido. Novo salário: " + salario);
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + "nome=" + nome + ", salario=" + salario + '}';
+    }
 }

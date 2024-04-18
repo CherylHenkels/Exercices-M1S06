@@ -99,4 +99,9 @@ public class Turma {
     public void removerAluno(String nome) {
         listaAlunos.removeIf(aluno -> aluno.getNome().equals(nome));
     }
+
+    @Override
+    public String toString() {
+        return "Turma{" + "listaAlunos=" + listaAlunos + '}';
+    }
 }
