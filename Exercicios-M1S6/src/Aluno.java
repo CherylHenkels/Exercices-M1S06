@@ -2,12 +2,19 @@ public class Aluno {
 
     private String nome;
     private int idade;
+    private StatusMatricula statusMatricula;
 
 
     // Contrutor
     public Aluno(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
+    }
+
+    public Aluno(String nome, int idade, StatusMatricula statusMatricula) {
+        this.nome = nome;
+        this.idade = idade;
+        this.statusMatricula = statusMatricula;
     }
 
     //Getters and Setters
@@ -25,5 +32,13 @@ public class Aluno {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public StatusMatricula getStatusMatricula() {
+        return statusMatricula;
+    }
+
+    public void setStatusMatricula(StatusMatricula statusMatricula) {
+        this.statusMatricula = statusMatricula;
     }
 }
