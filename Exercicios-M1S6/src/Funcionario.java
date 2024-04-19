@@ -35,6 +35,14 @@ public class Funcionario implements IFuncionario{
         this.salario = salario;
     }
 
+    public CargoFuncionario getCargoFuncionario() {
+        return cargoFuncionario;
+    }
+
+    public void setCargoFuncionario(CargoFuncionario cargoFuncionario) {
+        this.cargoFuncionario = cargoFuncionario;
+    }
+
     //Métodos
     @Override
     public void promover() {

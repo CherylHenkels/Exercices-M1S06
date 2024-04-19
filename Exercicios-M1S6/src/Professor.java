@@ -11,6 +11,10 @@ public class Professor extends Funcionario{
         this.tempoTrabalho = tempoTrabalho;
     }
 
+    public Professor(){
+
+    }
+
     //Getters and Setters
     public String getNome() {
         return nome;
