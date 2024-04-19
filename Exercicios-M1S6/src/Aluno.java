@@ -17,6 +17,9 @@ public class Aluno {
         this.statusMatricula = statusMatricula;
     }
 
+    public Aluno() {
+    }
+
     //Getters and Setters
     public String getNome() {
         return nome;
@@ -41,6 +44,7 @@ public class Aluno {
     public void setStatusMatricula(StatusMatricula statusMatricula) {
         this.statusMatricula = statusMatricula;
     }
+
 
     //Métodos
 

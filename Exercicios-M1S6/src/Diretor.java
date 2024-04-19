@@ -6,6 +6,9 @@ public class Diretor extends Funcionario{
         this.tempoCargo = tempoCargo;
     }
 
+    public Diretor() {
+    }
+
     public int getTempoCargo() {
         return tempoCargo;
     }

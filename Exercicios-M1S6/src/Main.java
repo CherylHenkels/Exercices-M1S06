@@ -16,6 +16,7 @@ public class Main {
         turma.adicionarAluno(aluno1);
         turma.adicionarAluno(aluno2);
         turma.removerAluno(scanner);
+        scanner.nextLine();
         List<Aluno> alunosTurma = turma.getListaAlunos();
         for (Aluno aluno : alunosTurma) {
             System.out.println(aluno.getNome());
@@ -49,12 +50,22 @@ public class Main {
         Funcionario funcionario = new Funcionario("Mark Twain", 50000.00);
         Diretor diretor = new Diretor("Anna Smith", 75000.00, 5);
 
-        System.out.println(aluno);
-        System.out.println(professor);
-        System.out.println(curso);
-        System.out.println(turma1);
-        System.out.println(funcionario);
-        System.out.println(diretor);
+//        System.out.println(aluno);
+//        System.out.println(professor);
+//        System.out.println(curso);
+//        System.out.println(turma1);
+//        System.out.println(funcionario);
+//        System.out.println(diretor);
+
+        //Exercicio 8 - Lista de dados
+        DadosAlunos dadosAlunos = new DadosAlunos();
+        dadosAlunos.adicionarAluno(scanner);
+        dadosAlunos.adicionarAluno(scanner);
+        dadosAlunos.listarAlunos();
+
+        System.out.println(dadosAlunos.buscarAluno(scanner).getNome());
+        dadosAlunos.removerAluno(scanner);
+        dadosAlunos.listarAlunos();
 
     }
 }

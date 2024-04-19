@@ -1,3 +1,4 @@
 public enum CargoFuncionario {
-        INICIANTE, EXPERIENTE, AVANCADO
+    INICIANTE, EXPERIENTE, AVANCADO
+
 }
