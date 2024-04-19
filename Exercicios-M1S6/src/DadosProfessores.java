@@ -3,10 +3,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosProfessores {
-    private List<Professor> listaProfessores;
+    private static List<Professor> listaProfessores = new ArrayList<>();
 
     public DadosProfessores() {
-        listaProfessores = new ArrayList<>();
     }
 
     public List<Professor> getListaProfessores() {
@@ -18,7 +17,7 @@ public class DadosProfessores {
     }
 
     //Metodos
-    public  void adicionarProfessor(Scanner scanner) {
+    public static void adicionarProfessor(Scanner scanner) {
         Professor professor = new Professor();
         System.out.println("Digite as informações do professor: ");
         System.out.println("Nome:");
@@ -42,7 +41,7 @@ public class DadosProfessores {
         System.out.println("Professor " + professor.getNome() + " removido!");
     }
 
-    public Professor buscarProfessor(Scanner scanner) {
+    public static Professor buscarProfessor(Scanner scanner) {
         System.out.println("Digite o id do professor:");
         int id = nextInt(scanner);
         Professor professorBuscado = null;

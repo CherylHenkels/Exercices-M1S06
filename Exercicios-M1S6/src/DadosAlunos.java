@@ -3,10 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosAlunos {
-    private List<Aluno> listaAlunos;
+    private static List<Aluno> listaAlunos = new ArrayList();
 
     public DadosAlunos() {
-        listaAlunos = new ArrayList<>();
+
     }
 
     public List<Aluno> getListaAlunos() {
@@ -18,14 +18,13 @@ public class DadosAlunos {
     }
 
     //Metodos
-    public  void adicionarAluno(Scanner scanner) {
+    public static void adicionarAluno(Scanner scanner) {
         Aluno aluno = new Aluno();
         System.out.println("Digite as informações do aluno: ");
         System.out.println("Nome:");
         aluno.setNome(scanner.nextLine());
         System.out.println("Idade:");
         aluno.setIdade(nextInt(scanner));
-        System.out.println("Tempo de Trabalho:");
         System.out.println("Escolha o status de matricula:");
         for (StatusMatricula statusMatricula: StatusMatricula.values()) {
             System.out.println(statusMatricula);
@@ -43,7 +42,7 @@ public class DadosAlunos {
         System.out.println("Aluno " + aluno.getNome() + " removido!");
     }
 
-    public Aluno buscarAluno(Scanner scanner) {
+    public static Aluno buscarAluno(Scanner scanner) {
         System.out.println("Digite o id do aluno:");
         int id = nextInt(scanner);
         Aluno alunoBuscado = null;
