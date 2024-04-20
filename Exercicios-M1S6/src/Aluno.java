@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Aluno {
 
     private String nome;
@@ -51,5 +55,54 @@ public class Aluno {
     @Override
     public String toString() {
         return "Aluno{" + "nome=" + nome + ", idade=" + idade + '}';
+    }
+
+
+    public void listarTurmasAluno() {
+        int counter = 1;
+        List<Turma> turmasAluno = buscarTurmasAluno();
+        for (Turma turma : turmasAluno) {
+            System.out.println(counter + " - " + turma.getCurso().getNomeCurso());
+            counter++;
+        }
+        if (counter == 1) {
+            System.out.println("Você não está matriculado em nenhum curso");
+        }
+    }
+
+    public List<Turma> buscarTurmasAluno() {
+        List<Turma> turmasAluno = new ArrayList<>();
+        for (Turma turma : DadosTurmas.getListaTurmas()) {
+            for (Aluno aluno : turma.getListaAlunos()) {
+                if (aluno.getNome().equals(this.getNome())) {
+                    turmasAluno.add(turma);
+                }
+            }
+        }
+        return turmasAluno;
+    }
+
+
+    public void trancarMatricula () {
+        if (statusMatricula.equals(statusMatricula.ATIVO)) {
+            statusMatricula = statusMatricula.TRANCADO;
+            System.out.println("O aluno está " + statusMatricula);
+        } else if (statusMatricula.equals(statusMatricula.TRANCADO)) {
+            System.out.println("O aluno já estava " + statusMatricula);
+        } else {
+            System.out.println("O aluno ja é formado!");
+        }
+    }
+
+
+    public void ativarMatricula () {
+        if (statusMatricula.equals(statusMatricula.TRANCADO)) {
+            statusMatricula = statusMatricula.ATIVO;
+            System.out.println("Aluno " + statusMatricula);
+        } else if (statusMatricula.equals(statusMatricula.ATIVO)) {
+            System.out.println("Aluno já está " + statusMatricula);
+        } else {
+            System.out.println("Aluno já é formado");
+        }
     }
 }

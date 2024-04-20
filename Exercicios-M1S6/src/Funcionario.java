@@ -1,4 +1,5 @@
 public class Funcionario implements IFuncionario{
+
     private String nome;
     private Double salario;
     private CargoFuncionario cargoFuncionario;
@@ -46,8 +47,11 @@ public class Funcionario implements IFuncionario{
     //Métodos
     @Override
     public void promover() {
-        this.salario *= 1.10; // 10% de aumento
-        System.out.println(nome + " foi promovido. Novo salário: " + salario);
+        if (cargoFuncionario.equals(cargoFuncionario.INICIANTE)) {
+            cargoFuncionario = cargoFuncionario.EXPERIENTE;
+        } else if (cargoFuncionario.equals(cargoFuncionario.EXPERIENTE)) {
+            cargoFuncionario = cargoFuncionario.AVANCADO;
+        }
     }
 
     @Override

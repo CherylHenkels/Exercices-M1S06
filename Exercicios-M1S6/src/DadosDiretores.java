@@ -3,12 +3,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosDiretores {
-    private List<Diretor> listaDiretores;
 
+    public static List<Diretor> listaDiretores  = new ArrayList<>();
+
+    //Construtor
     public DadosDiretores() {
-        listaDiretores = new ArrayList<>();
     }
 
+    //Getters and Setters
     public List<Diretor> getListaDiretores() {
         return listaDiretores;
     }
@@ -18,7 +20,7 @@ public class DadosDiretores {
     }
 
     //Metodos
-    public  void adicionarDiretor(Scanner scanner) {
+    public static void adicionarDiretor(Scanner scanner) {
         Diretor diretor = new Diretor();
         System.out.println("Digite as informações do diretor: ");
         System.out.println("Nome:");
@@ -45,7 +47,7 @@ public class DadosDiretores {
         System.out.println("Diretor " + diretor.getNome() + " removido!");
     }
 
-    public Diretor buscarDiretor(Scanner scanner) {
+    public static Diretor buscarDiretor(Scanner scanner) {
         System.out.println("Digite o id do diretor:");
         int id = nextInt(scanner);
         Diretor diretorBuscado = null;
@@ -59,7 +61,7 @@ public class DadosDiretores {
         return diretorBuscado;
     }
 
-    public void listarDiretores(){
+    public static void listarDiretores(){
         System.out.println("A lista de diretores é:");
         int i = 1;
         for(Diretor diretor : listaDiretores){

@@ -12,7 +12,6 @@ public class Professor extends Funcionario{
     }
 
     public Professor(){
-
     }
 
     //Getters and Setters

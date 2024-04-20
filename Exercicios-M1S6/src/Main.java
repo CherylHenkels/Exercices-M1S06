@@ -13,14 +13,14 @@ public class Main {
         Aluno aluno1 = new Aluno("Aluno 1", 20);
         Aluno aluno2 = new Aluno("Aluno 2", 24);
 
-        turma.adicionarAluno(aluno1);
-        turma.adicionarAluno(aluno2);
-        turma.removerAluno(scanner);
-        scanner.nextLine();
-        List<Aluno> alunosTurma = turma.getListaAlunos();
-        for (Aluno aluno : alunosTurma) {
-            System.out.println(aluno.getNome());
-        }
+//        turma.adicionarAluno(aluno1);
+//        turma.adicionarAluno(aluno2);
+//        turma.removerAluno(scanner);
+//        scanner.nextLine();
+//        List<Aluno> alunosTurma = turma.getListaAlunos();
+//        for (Aluno aluno : alunosTurma) {
+//            System.out.println(aluno.getNome());
+//        }
 
         System.out.println("\n\n ---------------------------------- \n");
 
@@ -58,14 +58,14 @@ public class Main {
 //        System.out.println(diretor);
 
         //Exercicio 8 - Lista de dados
-        DadosAlunos dadosAlunos = new DadosAlunos();
-        dadosAlunos.adicionarAluno(scanner);
-        dadosAlunos.adicionarAluno(scanner);
-        dadosAlunos.listarAlunos();
-
-        System.out.println(dadosAlunos.buscarAluno(scanner).getNome());
-        dadosAlunos.removerAluno(scanner);
-        dadosAlunos.listarAlunos();
+//        DadosAlunos dadosAlunos = new DadosAlunos();
+//        dadosAlunos.adicionarAluno(scanner);
+//        dadosAlunos.adicionarAluno(scanner);
+//        dadosAlunos.listarAlunos();
+//
+//        System.out.println(dadosAlunos.buscarAluno(scanner).getNome());
+//        dadosAlunos.removerAluno(scanner);
+//        dadosAlunos.listarAlunos();
 
     }
 }
