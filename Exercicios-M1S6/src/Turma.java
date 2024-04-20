@@ -19,6 +19,11 @@ public class Turma {
         this.curso = curso;
     }
 
+    public Turma(int anoCriacao, Curso curso) {
+        this.anoCriacao = anoCriacao;
+        this.curso = curso;
+    }
+
     public Turma() {
     }
 
@@ -98,6 +103,11 @@ public class Turma {
     //Remove aluno por nome
     public void removerAluno(String nome) {
         listaAlunos.removeIf(aluno -> aluno.getNome().equals(nome));
+    }
+
+    //Remove aluno por referencia (sobrecarga)
+    public void removerAluno(Aluno aluno) {
+        listaAlunos.remove(aluno);
     }
 
     @Override

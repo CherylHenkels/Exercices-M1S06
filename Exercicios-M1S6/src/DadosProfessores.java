@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosProfessores {
-    private static List<Professor> listaProfessores = new ArrayList<>();
+    public static List<Professor> listaProfessores = new ArrayList<>();
 
     public DadosProfessores() {
     }

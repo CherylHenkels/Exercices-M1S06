@@ -9,6 +9,10 @@ public class Curso {
         this.professorCurso = professorCurso;
     }
 
+    public Curso() {
+
+    }
+
     //Getters and Setters
     public String getNomeCurso() {
         return nomeCurso;

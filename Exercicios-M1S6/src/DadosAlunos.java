@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosAlunos {
-    private static List<Aluno> listaAlunos = new ArrayList();
+    public static List<Aluno> listaAlunos = new ArrayList();
 
     public DadosAlunos() {
 
@@ -35,6 +35,11 @@ public class DadosAlunos {
         System.out.println("Aluno " + aluno.getNome() + " adicionado!");
     }
 
+    //Override de adicionar Aluno
+    public static void adicionarAluno(Aluno aluno) {
+        listaAlunos.add(aluno);
+    }
+
     public void removerAluno(Scanner scanner) {
         listarAlunos();
         Aluno aluno = buscarAluno(scanner);
@@ -56,7 +61,7 @@ public class DadosAlunos {
         return alunoBuscado;
     }
 
-    public void listarAlunos(){
+    public static void listarAlunos(){
         System.out.println("A lista de alunos é:");
         int i = 1;
         for(Aluno aluno : listaAlunos){

@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosDiretores {
-    private static List<Diretor> listaDiretores  = new ArrayList<>();
+    public static List<Diretor> listaDiretores  = new ArrayList<>();
 
     public DadosDiretores() {
 

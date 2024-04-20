@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class MainLogin {
 
     public static void main(String[] args) {
+
+        parametrosIniciais.parametrosInicializacao();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("***********************");
@@ -69,9 +71,10 @@ public class MainLogin {
 
             switch (opcao) {
                 case 1: //Login
+                    DadosAlunos.listarAlunos();
                     Aluno alunoEscolhido = DadosAlunos.buscarAluno(entrada);
                     System.out.println("Bem-vindo(a) de volta, " + alunoEscolhido.getNome());
-                    //opcoesAluno(alunoEscolhido);
+                    opcoesAluno(alunoEscolhido);
                     break;
                 case 2: //Criar
 //                    Aluno novoAluno = new Aluno();
@@ -87,7 +90,62 @@ public class MainLogin {
         } catch (Exception e) {
             System.out.println("Opção inválida");
         }
-//        menuAluno();
+       // opcaoAluno();
+    }
+
+    public static void opcoesAluno(Aluno alunoEscolhido) {
+        try {
+
+            Scanner entrada = new Scanner(System.in);
+
+            System.out.println("|----------------------------|");
+            System.out.println("|O que você deseja fazer?    |");
+            System.out.println("|----------------------------|");
+            System.out.println("| 1- Listar meus cursos      |");
+            System.out.println("| 2- Adicionar curso         |");
+            System.out.println("| 3- Remover curso           |");
+            System.out.println("| 4- Trancar minha matrícula |");
+            System.out.println("| 5- Ativar minha matrícula  |");
+            System.out.println("|----------------------------|");
+            System.out.println("| 0- Sair                    |");
+            System.out.println("|----------------------------|");
+            System.out.println("Selecione uma opção:");
+
+            Turma turmaEscolhida;
+
+            int opcao = entrada.nextInt();
+            entrada.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    DadosTurmas.listarTurmasAluno(alunoEscolhido); // lista turmas do aluno
+                    break;
+                case 2:
+                    DadosTurmas.listarTurmas(); // lista todas as turmas
+                    turmaEscolhida = DadosTurmas.buscarTurma(entrada); // encontra turma solicitada
+                    turmaEscolhida.adicionarAluno(alunoEscolhido);
+                    System.out.println("Curso " + turmaEscolhida.getCurso().getNomeCurso() + " adicionado com sucesso!");
+                    break;
+                case 3:
+                    DadosTurmas.deletarTurmaAluno(entrada, alunoEscolhido);
+                    System.out.println("Curso removido com sucesso!");
+                    break;
+                case 4:
+                    alunoEscolhido.trancarMatricula();
+                    break;
+                case 5:
+                    alunoEscolhido.ativarMatricula();
+                    break;
+                case 0:
+                    return;
+                default:
+                    System.out.println("Insira uma opção válida.");
+                    break;
+            }
+        } catch (Exception e) {
+            System.out.println("Selecione uma opção:");
+        }
+        opcoesAluno(alunoEscolhido);
     }
 
 
