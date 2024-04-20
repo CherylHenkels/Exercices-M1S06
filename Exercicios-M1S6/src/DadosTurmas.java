@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class DadosTurmas {
     public static List<Turma> listaTurmas = new ArrayList();
 
+    //Construtor
     public DadosTurmas() {
-
     }
 
+    //Getters and Setters
     public static List<Turma> getListaTurmas() {
         return listaTurmas;
     }
@@ -16,6 +17,7 @@ public class DadosTurmas {
     public void setListaTurmas(List<Turma> listaTurmas) {
         this.listaTurmas = listaTurmas;
     }
+
 
     //Metodos
     public static void adicionarTurma(Scanner scanner) {
@@ -65,14 +67,16 @@ public class DadosTurmas {
 
     public static List<Turma> buscarTurmasAluno(Aluno alunoEscolhido) {
         List<Turma> listaTurmasAluno = new ArrayList();
-//        List<Aluno> listaAluno = new ArrayList();
-        for(Turma turma : listaTurmas){
-            for (Aluno aluno : turma.getListaAlunos()){
-                if(alunoEscolhido.equals(aluno)){
+        for (Turma turma : listaTurmas) {
+            for (Aluno aluno : turma.getListaAlunos()) {
+                if (alunoEscolhido.equals(aluno)) {
                     listaTurmasAluno.add(turma);
                 }
             }
-             }
+        }
+        if(listaTurmasAluno.isEmpty()){
+            System.out.println("Você não está cadastrado em nenhum curso.");
+        }
         return listaTurmasAluno;
     }
 
@@ -93,7 +97,6 @@ public class DadosTurmas {
             int listItem = i + 1 ;
             if(id == listItem){
                 listaTurmasAluno.get(i).removerAluno(alunoEscolhido);
-                System.out.println("Removido id" + listItem);
                 break;
             }
         }

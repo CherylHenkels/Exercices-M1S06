@@ -3,11 +3,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosProfessores {
+
     public static List<Professor> listaProfessores = new ArrayList<>();
 
+    //Construtor
     public DadosProfessores() {
     }
 
+    //Getters and Setters
     public List<Professor> getListaProfessores() {
         return listaProfessores;
     }
@@ -15,6 +18,7 @@ public class DadosProfessores {
     public void setListaProfessores(List<Professor> listaProfessores) {
         this.listaProfessores = listaProfessores;
     }
+
 
     //Metodos
     public static void adicionarProfessor(Scanner scanner) {
@@ -55,7 +59,7 @@ public class DadosProfessores {
         return professorBuscado;
     }
 
-    public void listarProfessores(){
+    public static void listarProfessores(){
         System.out.println("A lista de professores é:");
         int i = 1;
         for(Professor professor : listaProfessores){

@@ -3,12 +3,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosDiretores {
+
     public static List<Diretor> listaDiretores  = new ArrayList<>();
 
+    //Construtor
     public DadosDiretores() {
-
     }
 
+    //Getters and Setters
     public List<Diretor> getListaDiretores() {
         return listaDiretores;
     }
@@ -59,7 +61,7 @@ public class DadosDiretores {
         return diretorBuscado;
     }
 
-    public void listarDiretores(){
+    public static void listarDiretores(){
         System.out.println("A lista de diretores é:");
         int i = 1;
         for(Diretor diretor : listaDiretores){

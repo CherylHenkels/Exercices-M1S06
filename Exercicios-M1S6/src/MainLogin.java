@@ -4,56 +4,61 @@ public class MainLogin {
 
     public static void main(String[] args) {
 
-        parametrosIniciais.parametrosInicializacao();
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("***********************");
-        System.out.println("*      BEM VINDO      *");
-        System.out.println("***********************");
-
-        try{
-            //do {
-            System.out.println("|---------------------|");
-            System.out.println("| 1- Aluno            |");
-            System.out.println("| 2- Funcionario      |");
-            System.out.println("|---------------------|");
-            System.out.println("| 0- Sair             |");
-            System.out.println("|---------------------|");
-            System.out.println("Selecione uma opção:");
-
-            int opcao = scanner.nextInt();
-            scanner.nextLine(); // consome enter depois do número
-
-            // Menu
-            switch (opcao) {
-                case 1: // Aluno
-                    opcaoAluno();
-                    break;
-                case 2: // Funcionario
-                    opcaoFuncionario();
-                    break;
-                case 0: // sair
-                    return;
-                default:
-                    System.out.println("Insira uma opção válida.");
-            }
-
-            espacoVertical();
-        //} while (true);
-        }
-        catch (Exception e) {
-            System.out.println("Opção inválida");
-        }
-
-
-
+        ConfiguracaoInicial.dataStart();
+        login();
 
     }
 
 
+    // ---------------------------- LOGIN ----------------------------
+
+        public static void login() {
+            System.out.println("***********************");
+            System.out.println("*      BEM VINDO      *");
+            System.out.println("***********************");
+
+            Scanner scanner = new Scanner(System.in);
+
+            try {
+                //do {
+                System.out.println("|---------------------|");
+                System.out.println("| 1- Aluno            |");
+                System.out.println("| 2- Funcionario      |");
+                System.out.println("|---------------------|");
+                System.out.println("| 0- Sair             |");
+                System.out.println("|---------------------|");
+                System.out.println("Selecione uma opção:");
+
+                int opcao = scanner.nextInt();
+                scanner.nextLine(); // consome enter depois do número
+
+                // Menu
+                switch (opcao) {
+                    case 1: // Aluno
+                        opcaoAluno();
+                        break;
+                    case 2: // Funcionario
+                        opcaoFuncionario();
+                        break;
+                    case 0: // sair
+                        login();
+                        return;
+                    default:
+                        System.out.println("Insira uma opção válida.");
+                        break;
+                }
+                //} while (true);
+            } catch (Exception e) {
+                System.out.println("Opção inválida");
+            }
+
+            espacoVertical();
+        }
+
     // ---------------------------- ALUNO ----------------------------
     public static void opcaoAluno() {
 
+        espacoVertical();
         try {
             Scanner entrada = new Scanner(System.in);
             System.out.println("|---------------------|");
@@ -77,11 +82,11 @@ public class MainLogin {
                     opcoesAluno(alunoEscolhido);
                     break;
                 case 2: //Criar
-//                    Aluno novoAluno = new Aluno();
                     DadosAlunos.adicionarAluno(entrada);
                     opcaoAluno();
                     break;
                 case 0:
+                    login();
                     return;
                 default:
                     System.out.println("Insira uma opção válida.");
@@ -90,10 +95,13 @@ public class MainLogin {
         } catch (Exception e) {
             System.out.println("Opção inválida");
         }
-       // opcaoAluno();
+
+        opcaoAluno();
     }
 
     public static void opcoesAluno(Aluno alunoEscolhido) {
+
+        espacoVertical();
         try {
 
             Scanner entrada = new Scanner(System.in);
@@ -137,6 +145,7 @@ public class MainLogin {
                     alunoEscolhido.ativarMatricula();
                     break;
                 case 0:
+                    login();
                     return;
                 default:
                     System.out.println("Insira uma opção válida.");
@@ -145,6 +154,7 @@ public class MainLogin {
         } catch (Exception e) {
             System.out.println("Selecione uma opção:");
         }
+
         opcoesAluno(alunoEscolhido);
     }
 
@@ -175,6 +185,7 @@ public class MainLogin {
                     opcaoDiretor();
                     break;
                 case 0:
+                    login();
                     return;
                 default:
                     System.out.println("Insira uma opção válida.");
@@ -184,7 +195,9 @@ public class MainLogin {
             System.out.println("Opção inválida");
             System.out.println();
         }
-//        menuFuncionario();
+
+        espacoVertical();
+        opcaoFuncionario();
     }
 
     // ---------------------------- PROFESSOR ----------------------------
@@ -208,15 +221,16 @@ public class MainLogin {
 
             switch (opcao) {
                 case 1: //Login
+                    DadosProfessores.listarProfessores();
                     Professor professorEscolhido = DadosProfessores.buscarProfessor(entrada);
                     System.out.println("Bem-vindo(a) de volta, " + professorEscolhido.getNome());
-                    //opcoesAluno(alunoEscolhido);
                     break;
                 case 2: //Criar
                     DadosProfessores.adicionarProfessor(entrada);
                     opcaoProfessor();
                     break;
                 case 0:
+                    login();
                     return;
                 default:
                     System.out.println("Insira uma opção válida.");
@@ -226,7 +240,9 @@ public class MainLogin {
             System.out.println("Opção inválida");
             System.out.println();
         }
-//        menuProfessor();
+
+        espacoVertical();
+        opcaoProfessor();
     }
 
     // ---------------------------- DIRETOR ----------------------------
@@ -250,15 +266,16 @@ public class MainLogin {
 
             switch (opcao) {
                 case 1: //Login
+                    DadosDiretores.listarDiretores();
                     Diretor diretorEscolhido = DadosDiretores.buscarDiretor(entrada);
                     System.out.println("Bem-vindo(a) de volta, " + diretorEscolhido.getNome());
-                    //opcoesAluno(alunoEscolhido);
                     break;
                 case 2: //Criar
                     DadosDiretores.adicionarDiretor(entrada);
                     opcaoDiretor();
                     break;
                 case 0:
+                    login();
                     return;
                 default:
                     System.out.println("Insira uma opção válida.");
@@ -268,7 +285,9 @@ public class MainLogin {
             System.out.println("Opção inválida");
             System.out.println();
         }
-//        menuProfessor();
+
+        espacoVertical();
+        opcaoDiretor();
     }
 
 

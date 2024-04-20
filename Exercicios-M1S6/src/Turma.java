@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Turma {
 
     //Atributos
-
      private List<Aluno> listaAlunos = new ArrayList<>();
      private int anoCriacao;
      private Curso curso;
@@ -28,7 +27,6 @@ public class Turma {
     }
 
     //Getters and Setters
-
     public List<Aluno> getListaAlunos() {
         return listaAlunos;
     }
@@ -53,6 +51,7 @@ public class Turma {
         this.curso = curso;
     }
 
+
     //Métodos
     public void listarAlunos(){
         int i = 1;
@@ -66,17 +65,14 @@ public class Turma {
         listaAlunos.add(aluno);
     }
 
-    public void removerAluno(Scanner scanner){
+    public void removerAluno(Scanner scanner) {
         System.out.println("Para remover um aluno");
         listarAlunos();
         System.out.println("Digite o número da chamada:");
-
-
         int idAluno = scanner.nextInt();
         Aluno alunoEscolhido = null;
-
-        for(int i = 0; i<listaAlunos.size(); i++){
-            if(i+1==idAluno){
+        for (int i = 0; i < listaAlunos.size(); i++) {
+            if (i + 1 == idAluno) {
                 alunoEscolhido = listaAlunos.get(i);
             }
         }

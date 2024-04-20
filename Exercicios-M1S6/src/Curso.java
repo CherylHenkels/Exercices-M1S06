@@ -10,7 +10,6 @@ public class Curso {
     }
 
     public Curso() {
-
     }
 
     //Getters and Setters

@@ -57,30 +57,6 @@ public class Aluno {
         return "Aluno{" + "nome=" + nome + ", idade=" + idade + '}';
     }
 
-//    public void listarCursosAluno() {
-//        int counter = 1;
-//        List<Curso> cursosAluno = buscarCursosAluno();
-//        for (Curso curso : cursosAluno) {
-//            System.out.println(counter + " - " + curso.getNomeCurso());
-//            counter++;
-//        }
-//        if (counter == 1) {
-//            System.out.println("Você não está matriculado em nenhum curso");
-//        }
-//    }
-
-
-//    public List<Curso> buscarCursosAluno() {
-//        List<Curso> cursosAluno = new ArrayList<>();
-//        for (Turma turma : DadosTurmas.getListaTurmas()) {
-//            for (Aluno aluno : turma.getListaAlunos()) {
-//                if (aluno.getNome().equals(this.getNome())) {
-//                    cursosAluno.add(turma.getCurso());
-//                }
-//            }
-//        }
-//        return cursosAluno;
-//        }
 
     public void listarTurmasAluno() {
         int counter = 1;
@@ -106,20 +82,6 @@ public class Aluno {
         return turmasAluno;
     }
 
-//    public void deletarTurmaAluno(Scanner scanner, Aluno alunoEscolhido){
-//        int counter = 1;
-//        listarTurmasAluno();
-//        System.out.println("Digite o id do curso para deletar");
-//        int id = scanner.nextInt();
-//        scanner.nextLine();
-//        for (Turma turma: buscarTurmasAluno()) {
-//            if(id == counter){
-//                turma.removerAluno(alunoEscolhido.getNome());
-//                System.out.println("Aluno removido com sucesso " + counter);
-//            }
-//            counter++;
-//        }
- //   }
 
     public void trancarMatricula () {
         if (statusMatricula.equals(statusMatricula.ATIVO)) {
