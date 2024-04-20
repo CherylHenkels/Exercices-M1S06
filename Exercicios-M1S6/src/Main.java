@@ -58,14 +58,14 @@ public class Main {
 //        System.out.println(diretor);
 
         //Exercicio 8 - Lista de dados
-        DadosAlunos dadosAlunos = new DadosAlunos();
-        dadosAlunos.adicionarAluno(scanner);
-        dadosAlunos.adicionarAluno(scanner);
-        dadosAlunos.listarAlunos();
-
-        System.out.println(dadosAlunos.buscarAluno(scanner).getNome());
-        dadosAlunos.removerAluno(scanner);
-        dadosAlunos.listarAlunos();
+//        DadosAlunos dadosAlunos = new DadosAlunos();
+//        dadosAlunos.adicionarAluno(scanner);
+//        dadosAlunos.adicionarAluno(scanner);
+//        dadosAlunos.listarAlunos();
+//
+//        System.out.println(dadosAlunos.buscarAluno(scanner).getNome());
+//        dadosAlunos.removerAluno(scanner);
+//        dadosAlunos.listarAlunos();
 
     }
 }
